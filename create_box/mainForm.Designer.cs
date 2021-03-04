@@ -44,6 +44,7 @@ namespace create_box
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(608, 526);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -52,7 +53,7 @@ namespace create_box
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(600, 500);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "HW 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -61,9 +62,9 @@ namespace create_box
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(618, 433);
+            this.tabPage2.Size = new System.Drawing.Size(600, 500);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "HW 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // mainForm
@@ -73,7 +74,7 @@ namespace create_box
             this.ClientSize = new System.Drawing.Size(652, 538);
             this.Controls.Add(this.tabControl1);
             this.Name = "mainForm";
-            this.Text = "mainForm";
+            this.Text = "Computer Graphic";
             this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
