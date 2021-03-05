@@ -61,6 +61,28 @@ namespace create_box
 
 
         }
+        public void myWriteCoordinate(Graphics graphics,String text,Brush br,float x,float y)
+        {
+            graphics.DrawString(text,(new Font("Times New Roman", 10.0f)),br,x*scale+X0,y*scale+Y0);
+        }
+
+        public void drawCoordinate()
+        {
+            changePos();
+            myDrawMesh(GP);
+
+            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
+            myWriteCoordinate(GP, "au( " + (pU.X * a ).ToString()+ " , "+ (-pU.Y * a).ToString()+ " )", Brushes.Crimson, pU.X * a, pU.Y * a);
+            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
+
+            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
+            myWriteCoordinate(GP, "bv( " + (pV.X * b).ToString() + " , " + (-pV.Y * b).ToString() + " )", Brushes.Blue, pV.X * b, pV.Y * b);
+            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
+
+            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
+            myWriteCoordinate(GP, "au + bv( " + (pU.X * a + pV.X * b).ToString() + " , " + (-(pU.Y * a + pV.Y * b)).ToString() + " )", Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
+            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
+        }
         public void myDrawMesh(Graphics graphics)
         {
             graphics.Clear(Color.White);
@@ -71,111 +93,34 @@ namespace create_box
                 graphics.DrawLine(grayPen, 0, i, panel1.Width, i);
 
 
-            graphics.DrawLine(new Pen(Color.Red, 1), panel1.Width / 2, 0, panel1.Width/2 , panel1.Height);
-            graphics.DrawLine(new Pen(Color.Red, 1), 0, panel1.Height / 2, panel1.Width , panel1.Height/2);
+            graphics.DrawLine(new Pen(Color.FromArgb(80, 0, 128, 0), 1), panel1.Width / 2, 0, panel1.Width/2 , panel1.Height);
+            graphics.DrawLine(new Pen(Color.FromArgb(80, 255, 0, 0), 1), 0, panel1.Height / 2, panel1.Width , panel1.Height/2);
 
-            graphics.DrawLine(new Pen(Color.Red, 2), panel1.Width / 2, panel1.Height / 2, panel1.Width / 2 + 20, panel1.Height / 2);
-            graphics.DrawLine(new Pen(Color.Green, 2), panel1.Width / 2, panel1.Height / 2, panel1.Width / 2, panel1.Height / 2 - 20);
+            graphics.DrawString("X", (new Font("Times New Roman", 10.0f)), Brushes.Red, panel1.Width -14, panel1.Height/2);
+
+            graphics.DrawLine(new Pen(Color.Red, 2), panel1.Width / 2, panel1.Height / 2, panel1.Width / 2 + 20, panel1.Height / 2); //x axis
+            graphics.DrawLine(new Pen(Color.Green, 2), panel1.Width / 2, panel1.Height / 2, panel1.Width / 2, panel1.Height / 2 - 20);//y axis
+
+            graphics.DrawString("Y", (new Font("Times New Roman", 10.0f)), Brushes.Green, panel1.Width/2 , 0);
 
             myDrawPoint(graphics,Brushes.Black, 0, 0);
         }
 
-        private void textBox_ux_TextChanged(object sender, EventArgs e)
+        private void textBox_Coordinate_TextChanged(object sender, EventArgs e)
         {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP,Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
+            drawCoordinate();
 
-            myDrawPoint(GP,Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
-        }
-
-        private void textBox_vx_TextChanged(object sender, EventArgs e)
-        {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
-        }
-
-        private void textBox_b_TextChanged(object sender, EventArgs e)
-        {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
-        }
-
-        private void textBox_uy_TextChanged(object sender, EventArgs e)
-        {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
-        }
-
-        private void textBox_vy_TextChanged(object sender, EventArgs e)
-        {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
-        }
-
-        private void textBox_a_TextChanged(object sender, EventArgs e)
-        {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
+            label_fun.Text = "au： ( " + (pU.X * a).ToString() + " , " + (-pU.Y * a).ToString() + " ) \n";
+            label_fun.Text += "bv： ( " + (pV.X * b).ToString() + " , " + (-pV.Y * b).ToString() + " ) \n";
+            label_fun.Text += "au + bv： ( " + (pU.X * a + pV.X * b).ToString() + " , " + (-(pU.Y * a + pV.Y * b)).ToString() + " ) \n";
         }
 
         private void Form2_Shown(object sender, EventArgs e)
         {
-            changePos();
-            myDrawMesh(GP);
-            myDrawPoint(GP, Brushes.Crimson, pU.X * a, pU.Y * a);
-            myDrawLine(GP, pU.X * a, pU.Y * a, 0, 0);
-
-            myDrawPoint(GP, Brushes.Blue, pV.X * b, pV.Y * b);
-            myDrawLine(GP, pV.X * b, pV.Y * b, 0, 0);
-
-            myDrawPoint(GP, Brushes.Violet, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b);
-            myDrawLine(GP, pU.X * a + pV.X * b, pU.Y * a + pV.Y * b, 0, 0);
+            drawCoordinate();
+            label_fun.Text = "au： ( "+(pU.X * a).ToString() + " , " + (-pU.Y * a).ToString()+" ) \n";
+            label_fun.Text += "bv： ( "+(pV.X * b).ToString() + " , " + (-pV.Y * b).ToString() + " ) \n";
+            label_fun.Text += "au + bv： ( " + (pU.X * a + pV.X * b).ToString() + " , " + (-(pU.Y * a + pV.Y * b)).ToString() + " ) \n";
         }
     }
 }

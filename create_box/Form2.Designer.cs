@@ -78,7 +78,7 @@ namespace create_box
             this.groupBox1.Controls.Add(this.label_u);
             this.groupBox1.Location = new System.Drawing.Point(430, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(158, 161);
+            this.groupBox1.Size = new System.Drawing.Size(158, 237);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "parameter";
@@ -86,9 +86,9 @@ namespace create_box
             // label_fun
             // 
             this.label_fun.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_fun.Location = new System.Drawing.Point(18, 133);
+            this.label_fun.Location = new System.Drawing.Point(6, 133);
             this.label_fun.Name = "label_fun";
-            this.label_fun.Size = new System.Drawing.Size(115, 16);
+            this.label_fun.Size = new System.Drawing.Size(146, 101);
             this.label_fun.TabIndex = 17;
             this.label_fun.Text = "label5";
             // 
@@ -99,7 +99,7 @@ namespace create_box
             this.textBox_b.Size = new System.Drawing.Size(37, 22);
             this.textBox_b.TabIndex = 16;
             this.textBox_b.Text = "1";
-            this.textBox_b.TextChanged += new System.EventHandler(this.textBox_b_TextChanged);
+            this.textBox_b.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // textBox_a
             // 
@@ -108,7 +108,7 @@ namespace create_box
             this.textBox_a.Size = new System.Drawing.Size(37, 22);
             this.textBox_a.TabIndex = 15;
             this.textBox_a.Text = "1";
-            this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
+            this.textBox_a.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // textBox_vy
             // 
@@ -117,7 +117,7 @@ namespace create_box
             this.textBox_vy.Size = new System.Drawing.Size(37, 22);
             this.textBox_vy.TabIndex = 14;
             this.textBox_vy.Text = "4";
-            this.textBox_vy.TextChanged += new System.EventHandler(this.textBox_vy_TextChanged);
+            this.textBox_vy.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // textBox_uy
             // 
@@ -126,7 +126,7 @@ namespace create_box
             this.textBox_uy.Size = new System.Drawing.Size(37, 22);
             this.textBox_uy.TabIndex = 13;
             this.textBox_uy.Text = "3";
-            this.textBox_uy.TextChanged += new System.EventHandler(this.textBox_uy_TextChanged);
+            this.textBox_uy.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // textBox_vx
             // 
@@ -135,7 +135,7 @@ namespace create_box
             this.textBox_vx.Size = new System.Drawing.Size(37, 22);
             this.textBox_vx.TabIndex = 12;
             this.textBox_vx.Text = "2";
-            this.textBox_vx.TextChanged += new System.EventHandler(this.textBox_vx_TextChanged);
+            this.textBox_vx.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // label3
             // 
@@ -160,7 +160,7 @@ namespace create_box
             this.textBox_ux.Size = new System.Drawing.Size(37, 22);
             this.textBox_ux.TabIndex = 7;
             this.textBox_ux.Text = "1";
-            this.textBox_ux.TextChanged += new System.EventHandler(this.textBox_ux_TextChanged);
+            this.textBox_ux.TextChanged += new System.EventHandler(this.textBox_Coordinate_TextChanged);
             // 
             // label1
             // 
